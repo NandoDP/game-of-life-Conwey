@@ -30,19 +30,23 @@ body{
 }
 .conteneur-grid{
   display: grid;
-  grid-template-columns: repeat(89, 1fr);
+  grid-template-columns: repeat(60, 1fr);
   /* border: 2px solid red; */
   background-color: #DDD;
 }
-.conteneur-grid > div{
-  padding: 5px 0px;
+.conteneur-grid > li{
+  /* cursor: pointer; */
+  list-style: none;
+}
+.conteneur-grid > li > div{
+  padding: 5px 5px;
   /* background-color: #DDD; */
   border: .1px dashed black;
 }
-.conteneur-grid > div.black{
+.conteneur-grid > li > div.black{
   background-color: #000000;
 }
-.conteneur-grid > div.white{
+.conteneur-grid > li > div.white{
   background-color: #DDD;
 }
 .details{
