@@ -1,11 +1,11 @@
 # Note
 Afin de comprendre ce README il est important de noter que:
-    # shape est un tableau de 2 elements: a et b,
-    # une matrice de taille shape est un tableau de a tableaux de b elements chacun,
-    # pour afficher une grille sur l'ecran on utilise une matrice de taille shape constituer 
-      de 0 et 1 avec la fonction 'printGrid': 0 represente une cellule morte (case blanche) 
-      1 represente une cellule vivante (case noir).
-    # une matrice nulle est une matrice de taille shape remplie de 0.
+- shape est un tableau de 2 elements: a et b,
+- une matrice de taille shape est un tableau de a tableaux de b elements chacun,
+- pour afficher une grille sur l'ecran on utilise une matrice de taille shape constituer 
+    de 0 et 1 avec la fonction 'printGrid': 0 represente une cellule morte (case blanche) 
+    1 represente une cellule vivante (case noir).
+- une matrice nulle est une matrice de taille shape remplie de 0.
 
 
 L'utilisateur peut choisir de demarrer la simulation de la situation de depart en eppuyant sur 'Start' directement
