@@ -8,21 +8,22 @@ Afin de comprendre ce README il est important de noter que:
 - une matrice nulle est une matrice de taille shape remplie de 0.
 
 
+# Fonctionnalités
 L'utilisateur peut choisir de demarrer la simulation de la situation de depart en eppuyant sur 'Start' directement
 oubien de l'effacer avec 'Clear' avant de cliquer sur les cellules a transformer et de demarrer avec 'Start'.
-En appuyant sur 'Start' la fonction 'startTimer' (explication du fonctionnement en bas) se declanche et la
+En appuyant sur 'Start' la fonction 'startTimer' se declanche et la
 simulation s'observe sur l'ecran. Le boutton 'Start' se transforme en 'Stop' (qui appele la meme fonction), qui 
 comme son nom l'indique peut mettre en pause la simulation.
 Il est aussi possible de tous arreter et de revenir sur la situation de depart avec le boutton 'Reset'.
 
 
 
-# Fonctions
+# Fonctions JavaScript
 ### grid
 Utiliser pour construire une matrice a partir d'un motif de depart (choisi par moi meme).
 La premiere chose a faire est de creer une matrice nulle.
 Ensuite la fonction remplie en son centre la matrice qui represente le motif de depart.
-### exemple: 
+## exemple: 
     3 cellules => motif = [
                     [0, 0, 0],
                     [1, 1, 1],
