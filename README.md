@@ -58,7 +58,6 @@ par l'evolution de l'element qui lui précéde grace a la fonction 'nextStep'.
 ### nextStep
 une matrice X est donner en parametre.
 On cree une matrice nulle D et pour chaque element (cellule) de position (x,y) (sauf ceux qui sont sur les 2 
-lignes et les 2 colonnes a l'extremité) on affecte 1 si l'une des conditions suivantes est satisfaite:
+lignes et les 2 colonnes a l'extremité) on affecte 1 si l'une des conditions suivantes est satisfaite (et 0 sinon):
 - la somme des 8 elements qui entourent X[x][y] egale à 3
 - la somme des 8 elements qui entourent X[x][y] egale à 2 et que l'element X[x][y] == 1
-et 0 sinon
