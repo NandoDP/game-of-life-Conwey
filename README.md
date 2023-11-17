@@ -17,10 +17,10 @@ Il est aussi possible de tous arreter et de revenir sur la situation de depart a
 
 
 
-# Fonctions
-- fonction 'grid' : Utiliser pour construire une matrice a partir d'un motif de depart (choisi par moi meme).
+### Fonctions
+- fonction 'grid' :
+Utiliser pour construire une matrice a partir d'un motif de depart (choisi par moi meme).
 La premiere chose a faire est de creer une matrice nulle.
-
 Ensuite la fonction remplie en son centre la matrice qui represente le motif de depart.
 ## exemple: 
     3 cellules => motif = [
