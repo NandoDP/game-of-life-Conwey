@@ -1,3 +1,4 @@
+# Note
 Afin de comprendre ce README il est important de noter que:
     # shape est un tableau de 2 elements: a et b,
     # une matrice de taille shape est un tableau de a tableaux de b elements chacun,
@@ -16,19 +17,12 @@ Il est aussi possible de tous arreter et de revenir sur la situation de depart a
 
 
 
-
-# fonction 'grid' : Utiliser pour construire une matrice a partir d'un motif de depart (choisi par moi meme).
+# Fonctions
+- fonction 'grid' : Utiliser pour construire une matrice a partir d'un motif de depart (choisi par moi meme).
 La premiere chose a faire est de creer une matrice nulle.
- (   shape = [a, b]
-    M = [
-        [0, ..., 0], (nbr de 0: b)
-        .
-        .
-        [0, ..., 0],
-    ] (nbr de ligne: a) )
 
 Ensuite la fonction remplie en son centre la matrice qui represente le motif de depart.
-exemple: 
+## exemple: 
     3 cellules => motif = [
                     [0, 0, 0],
                     [1, 1, 1],
@@ -39,29 +33,29 @@ exemple:
     
 
 
-# La fonction 'clear':
+- La fonction 'clear':
 L'utilisateur peut choisir de ne pas demarrer avec le motif pré-defini. Dans ce cas le boutton  'Clear' permet
 d'effacer entierement la grille en appelant la fonction 'grid' avec comme motif [] (le tableau vide).
 
 
-# La fonction 'printGrid':
+- La fonction 'printGrid':
 On cree une chaine de caratere vide.
 On parcours tous les elements de toutes les lignes de la matrice et on ajoute un li.div.black (element html) si 
 l'element == 1 et li.div.white si l'element == 0.
 
 
-# La fonction 'startTimer':
+- La fonction 'startTimer':
 On calcule et met dans un tableau les n generations suivantes de la situation de depart choisi grace a 'allSteps'.
 Ensuite on parcours le tableau et on affiche avec 'printGrid' une generation toutes les 300ms avec la fonction
 setInterval de JS. On arrete la simulation si toutes les generations sont affichées.
 
 
-# La fonction 'allSteps':
+- La fonction 'allSteps':
 On cree un tableau qui contient n matrice nulle. Ensuite on parcours le tableau et chaque element sera remplacer
 par l'evolution de l'element qui lui précéde grace a la fonction 'nextStep'.
 
 
-# La fonction 'nextStep':
+- La fonction 'nextStep':
 une matrice X est donner en parametre.
 On cree une matrice nulle D et pour chaque element (cellule) de position (x,y) (sauf ceux qui sont sur les 2 
 lignes et les 2 colonnes a l'extremité) on affecte 1 si l'une des conditions suivantes est satisfaite:
