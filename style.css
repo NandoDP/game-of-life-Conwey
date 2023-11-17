@@ -30,7 +30,7 @@ body{
 }
 .conteneur-grid{
   display: grid;
-  grid-template-columns: repeat(60, 1fr);
+  grid-template-columns: repeat(89, 1fr);
   /* border: 2px solid red; */
   background-color: #DDD;
 }

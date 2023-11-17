@@ -1,5 +1,11 @@
 function grid(X, shape) {
+    // AGRANDIR LA MATRICE X AVEC LA TAILLE shape
+    // X: motif (matrice), shape: taille de la grille (tableau de 2 entiers: nbr de lignes & nbr de colonnes)
+    
+    // Trouver les coordonnées pour centrer X dans la grande matrice
     var pos = [Math.floor((shape[0] - X.length)/2), Math.floor((shape[1] - X[0].length)/2)]
+    // Remplire les colonnes a gauches et a droites de X de 0 pour avoir un nombre 
+    // de colonne egal a shape[1] (=nombre de colonne souhaiter)
     X.map((a)=>{
         for (let i = 0; i < pos[1]; i++) {
             a.unshift(0);
@@ -8,6 +14,7 @@ function grid(X, shape) {
             a.push(0);
         }    
     })
+    // Meme chose pour les lignes
     for (let i = 0; i < pos[0]; i++) {
         X.unshift(Array(X[0].length).fill(0))
     }

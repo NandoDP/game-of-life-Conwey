@@ -1,20 +1,31 @@
 conteneur = document.querySelector(".conteneur-grid");
 stepsTag = document.querySelector(".steps b");
-refreshBtn = document.querySelector(".start");
+start_stop_Btn = document.querySelector(".start-stop");
 resetBtn = document.querySelector(".reset");
+clearBtn = document.querySelector(".clear");
 
+// ----------------------------
 
 let i = 0, interval;
-shape = [45, 60];
+let timer = 300;
+shape = [48, 89];
 nombreDeGeneration = 100;
-motif = exploder; 
+motif = exploder;
 
-A = grid(motif, shape);
-printGrid(A, shape);
+// --------------------------------------------------------------
 
+function start(X, shape, n) {
+    A = grid(X, shape);
+    B = allSteps(A, n);
+    printGrid(A, shape);
+};
 
+start(motif, shape, nombreDeGeneration);
 
 function startTimer(A, n, shape) {
+    if (A == []) {
+        return null;
+    }
     B = allSteps(A, n);
     printGrid(B[0], shape)
     return setInterval(() => {
@@ -24,26 +35,15 @@ function startTimer(A, n, shape) {
         if (i == n) {
             interval = clearInterval(interval);
         }
-    }, 300);
+    }, timer);
 }
 
-function reset() {
+function clear() {
     i = 0;
-    A = grid(motif, shape);
-    printGrid(A, shape);
+    start([[]], shape, nombreDeGeneration);
     stepsTag.innerHTML = 0;
+    f();
 }
-
-
-refreshBtn.addEventListener("click", ()=>{
-    if (!interval) {
-        refreshBtn.querySelector('p').innerHTML = "Stop";
-        interval = startTimer(A, nombreDeGeneration, shape);
-    } else {
-        interval = clearInterval(interval);
-        refreshBtn.querySelector('p').innerHTML = "Start";
-    }
-});
 
 function f() {
     lis = Array.from(conteneur.querySelectorAll("li"));
@@ -55,7 +55,7 @@ function f() {
             }
             // on calcule la position de l'element sur qui on a cliquez dans la generation actuelle
             index = lis.indexOf(li);
-            cord = [Math.floor(index/60), index%60];
+            cord = [Math.floor(index/shape[1]), index%shape[1]];
             // on change sa valeur dans la matrice
             if (A[cord[0]][cord[1]] == 1) {
                 A[cord[0]][cord[1]] = 0;
@@ -65,12 +65,32 @@ function f() {
             i = 0;
             printGrid(A, shape);
             stepsTag.innerHTML = 0;
+            f();
         });
     });
 }
 
-resetBtn.addEventListener("click", reset);
+// ---------------------------------------------------------------
 
-setInterval(() => {
+start_stop_Btn.addEventListener("click", ()=>{
+    if (!interval) {
+        interval = startTimer(A, nombreDeGeneration, shape);
+        start_stop_Btn.querySelector('p').innerHTML = "Stop";
+    } else {
+        interval = clearInterval(interval);
+        start_stop_Btn.querySelector('p').innerHTML = "Start";
+    }
     f();
-}, 100);
+});
+
+resetBtn.addEventListener("click", () => {
+    i = 0;
+    A = grid(motif, shape);
+    printGrid(A, shape);
+    stepsTag.innerHTML = 0;
+    f();
+});
+
+clearBtn.addEventListener("click", clear);
+
+f();
