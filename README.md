@@ -45,3 +45,9 @@ Solution web avec :
 et stock dabord dans un tableau les futures générations à partir d'une situation donnée avant de lancer la simulation.
 - La grille est de taille 80/45 pour garder un proportion de 16/9 à l'écran.
 - Au demarrage de la simulation, une génération est afficher toutes les 300ms.
+
+## Tester
+
+Pour tester le jeu vous pouvais soit:
+- le télécharger depuis github et ouvrir le fichier index.html dans un navigateur oubien
+- suivre [ce lien](https://game-of-life-conwey-sn-dev.netlify.app/) vers le site web
