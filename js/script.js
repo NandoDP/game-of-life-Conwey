@@ -37,6 +37,7 @@ function start(makedMatrix, maximumGeneration, shape) {
         currenStep++;
         printGridFromMatrix(allGenerations[currenStep], shape);
         stepsTag.innerHTML = currenStep;
+        // console.log(allGenerations[currenStep].length, allGenerations[currenStep][0].length);
         if (currenStep == maximumGeneration) {
             interval = clearInterval(interval);
         }
@@ -82,7 +83,6 @@ selectTag.addEventListener("change", () => {
     initialPattern = patterns[selectTag.value];
     changePattern(initialPattern);
 });
-
 
 startStopBtn.addEventListener("click", ()=>{
     if (!interval) {
