@@ -8,7 +8,7 @@ selectTag = document.querySelector("select");
 /**
  * initialize variables
  */
-let initialPattern = exploder;
+let initialPattern = ten;
 let maximumGenerationStep = 500;
 let shape = [45, 80];
 let timePerStep = 300;

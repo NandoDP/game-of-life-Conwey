@@ -5,8 +5,7 @@
 function makeMatrix(pattern, shape) {
     // Trouver les coordonnées pour centrer X dans la grande matrice
     var position = [Math.floor((shape[0] - pattern.length)/2), Math.floor((shape[1] - pattern[0].length)/2)];
-    // Remplire les colonnes a gauches et a droites de X de 0 pour avoir un nombre 
-    // de colonne egal a shape[1] (=nombre de colonne souhaiter)
+    // Agrandir pattern
     pattern.map((line)=>{
         for (let i = 0; i < position[1]; i++) {
             line.unshift(0);
@@ -48,8 +47,6 @@ function getNextStep(matrix) {
 }
 
 function getAllSteps(grid, maximumGeneration) {
-    // let zeroGridLivingCells = Array(grid.length).fill(Array(grid[0].length).fill(0));
-    // let steps = Array(maximumGeneration).fill(zeroGridLivingCells);
     let steps = [];
     for (let i = 0; i < maximumGeneration; i++) {
         steps[i] = grid;
