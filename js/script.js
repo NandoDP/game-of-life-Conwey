@@ -37,7 +37,6 @@ function start(makedMatrix, maximumGeneration, shape) {
         currenStep++;
         printGridFromMatrix(allGenerations[currenStep], shape);
         stepsTag.innerHTML = currenStep;
-        // console.log(allGenerations[currenStep].length, allGenerations[currenStep][0].length);
         if (currenStep == maximumGeneration) {
             interval = clearInterval(interval);
         }

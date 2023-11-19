@@ -6,14 +6,8 @@ Sommaire
 - [Technologies utilisées](#Technologies-utilisées)
 - [Fonctionalités](#Fonctionalités)
 - [Approche technique](#Approche-technique)
-
-## Auteur
-
-Maodo DIOP
-
-Etudiant :
-- licence 3 Bid Data à DIT (Dakar Institute of Technology)
-- license 3 Maths Appliquées UGB
+- [Tester le jeu](#tester-le-jeu)
+- [Auteur](#auteur)
 
 ## Technologies utilisées
 
@@ -35,19 +29,31 @@ Solution web avec :
 
 - le Bouton **Stop** permet de mettre en pause la simulation.
 
-- Le bouton **Reset** permte de tout arreter et de revenir sur la situation de depart avec le boutton
+- Le bouton **Reset** permte de tout arreter et de revenir sur la situation de depart.
+
+- Le Menu déroulant qui se situe en bas du bouton **Clear** permet de choisir parmis des motifs trés célébres du jeu de la vie de Conway.
 
 
 ## Approche technique
 
-- J'ai intégrer quelques motifs trés connus pour le jeu de la vie de Conwey.
+- J'ai intégrer quelques motifs trés connus pour le jeu de la vie de Conway.
 - J'ai choisi dans mon approche de limiter le nombre maximal de generations a 500 parce que ma programme calcul
 et stock dabord dans un tableau les futures générations à partir d'une situation donnée avant de lancer la simulation.
 - La grille est de taille 80/45 pour garder un proportion de 16/9 à l'écran.
 - Au demarrage de la simulation, une génération est afficher toutes les 300ms.
 
-## Tester
+## Tester le jeu
 
 Pour tester le jeu vous pouvais soit:
 - le télécharger depuis github et ouvrir le fichier index.html dans un navigateur oubien
-- suivre [ce lien](https://game-of-life-conwey-sn-dev.netlify.app/) vers le site web
+- suivre [ce lien](https://game-of-life-Conway-sn-dev.netlify.app/) vers le site web
+
+## Auteur
+
+Maodo DIOP
+
+Etudiant :
+- licence 3 Bid Data à DIT (Dakar Institute of Technology)
+- license 3 Maths Appliquées à l'UGB de Saint-Louis/Senegal
+
+Contact : maodo2000diop@gmail.com
