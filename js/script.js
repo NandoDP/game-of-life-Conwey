@@ -4,6 +4,7 @@ startStopBtn = document.querySelector(".start-stop");
 resetBtn = document.querySelector(".reset");
 clearBtn = document.querySelector(".clear");
 selectTag = document.querySelector("select");
+speedControleTag = document.querySelector(".speed-control");
 
 /**
  * initialize variables
@@ -81,6 +82,12 @@ for(const pattern in patterns){
 selectTag.addEventListener("change", () => {
     initialPattern = patterns[selectTag.value];
     changePattern(initialPattern);
+});
+
+speedControleTag.querySelector("input").addEventListener("change", () => {
+    timePerStep = parseInt(speedControleTag.querySelector("input").value);
+    speedControleTag.querySelector("span").innerHTML = speedControleTag.querySelector("input").value+" ms";
+
 });
 
 startStopBtn.addEventListener("click", ()=>{

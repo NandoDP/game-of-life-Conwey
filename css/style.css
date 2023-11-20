@@ -35,6 +35,10 @@ body {
     color: #6563ff
   }
 }
+.speed-control {
+  display: flex;
+  align-items: center;
+}
 .wrapper {
   padding: 10px;
   background: #f8f8f8;
