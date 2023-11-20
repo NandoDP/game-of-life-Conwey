@@ -33,6 +33,8 @@ Solution web avec :
 
 - Le Menu déroulant qui se situe en bas du bouton **Clear** permet de choisir parmis des motifs trés célébres du jeu de la vie de Conway.
 
+- L'utilisateur a aussi la possibilité de controller la vitesse de simulation
+
 
 ## Approche technique
 
