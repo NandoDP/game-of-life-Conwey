@@ -3,6 +3,7 @@ stepsTag = document.querySelector(".steps b");
 startStopBtn = document.querySelector(".start-stop");
 resetBtn = document.querySelector(".reset");
 clearBtn = document.querySelector(".clear");
+randomBtn = document.querySelector(".random");
 selectTag = document.querySelector("select");
 speedControleTag = document.querySelector(".speed-control");
 
@@ -76,6 +77,17 @@ function cellListener() {
     });
 }
 
+function startStop(fromStartStopBtn) {
+    if (!interval && fromStartStopBtn) {
+        interval = start(makedMatrix, maximumGenerationStep, shape);
+        startStopBtn.querySelector('p').innerHTML = "Stop";
+    } else {
+        interval = clearInterval(interval);
+        startStopBtn.querySelector('p').innerHTML = "Start";
+    }
+    cellListener();
+}
+
 for(const pattern in patterns){
     selectTag.innerHTML += "<option value='"+ pattern +"'>"+ pattern +"</option>";
 }
@@ -90,18 +102,12 @@ speedControleTag.querySelector("input").addEventListener("change", () => {
 
 });
 
-startStopBtn.addEventListener("click", ()=>{
-    if (!interval) {
-        interval = start(makedMatrix, maximumGenerationStep, shape);
-        startStopBtn.querySelector('p').innerHTML = "Stop";
-    } else {
-        interval = clearInterval(interval);
-        startStopBtn.querySelector('p').innerHTML = "Start";
-    }
-    cellListener();
+startStopBtn.addEventListener("click", () => {
+    startStop(true);
 });
 
 resetBtn.addEventListener("click", () => {
+    startStop(false);
     currenStep = 0;
     makedMatrix = makeMatrix(initialPattern, shape);
     printGridFromMatrix(makedMatrix, shape);
@@ -110,7 +116,23 @@ resetBtn.addEventListener("click", () => {
 });
 
 clearBtn.addEventListener("click", () => {
+    startStop(false);
     changePattern([[]]);
+});
+
+randomBtn.addEventListener("click", () => {
+    startStop(false);
+    randomPattern = [Array(shape[1]).fill(0)];
+    for (let i = 1; i < shape[0] - 1; i++) {
+        const element = [0];
+        for (let j = 1; j < shape[1] - 1; j++) {
+            Math.random() > 0.5 ? element.push(1) : element.push(0);
+        }
+        element.push(0)
+        randomPattern.push(element);
+    }
+    randomPattern.push(Array(shape[1]).fill(0));
+    changePattern(randomPattern);
 });
 
 cellListener();
